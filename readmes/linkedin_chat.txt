@@ -1,0 +1,22 @@
+To use the linkedin chat module:
+1. Make a new linkedin account and log in.
+2. Add another linkedin account you control as a connection and start a chat.
+3. In your python code, set dictionary keys "li_at" and "csrf_token" to cookies li_at and JSESSIONID from your browser's storage
+4. Open the network tab in your browser's developer tools
+5. Send a message
+6. From voyagerMessagingDashMessengerMessages?action=createMessage, open the request
+7. Set the dictionary key "conversation_urn" to conversationUrn, "mailbox_urn" to mailboxUrn, "origin_token" to originToken, and "tracking_id" to trackingId.
+8. send a few more messages such that when you reload the page, the messages extend past the top of the window. scroll up with the network tab open.
+9. look through responses to get requests with type "graphql" until you find one with the field messengerMessagesByAnchorTimestamp.
+10. set the dictionary key "msg_id" to the hex after "messengerMessages." in the anchor timestamp request.
+
+Your data dictionary should look like:
+data_dict = {
+    "li_at":long base64,
+    "csrf_token":"ajax:large decimal int",
+    "conversation_urn":"urn:li:msg_conversation:(urn:li:fsd_profile:base64,base64)",
+    "mailbox_urn":"urn:li:fsd_profile:base64",
+    "origin_token":guid,
+    "tracking_id":bytes,
+    "msg_id":large hex
+}

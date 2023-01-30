@@ -1,0 +1,9 @@
+This is essentially a template module.
+To use the local filewrite module:
+1. choose a file name for the dict key "file_name".
+
+your data dictionary should look like:
+
+data_dict = {
+    "file_name":any_valid_filename
+}
