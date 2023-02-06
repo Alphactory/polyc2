@@ -1,0 +1,14 @@
+Exfiltrate data using the anilist.co about me section of a profile
+To use the anilist profile module:
+1. Make a new account on anilist.co
+2. From cookies, grab "laravel_session"
+3. Go to your profile and reload the page with the network tab open.
+4. Find a graphql request.
+5. Under headers, find x-csrf-token. copy it into "csrf_token"
+
+your data dictionary should look like:
+
+data_dict = {
+    "laravel_session":base64,
+    "csrf_token":base64
+}
