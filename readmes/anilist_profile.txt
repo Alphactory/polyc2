@@ -1,4 +1,5 @@
 Exfiltrate data using the anilist.co about me section of a profile
+LIMITATIONS: 66418 size limit base64 encoded
 To use the anilist profile module:
 1. Make a new account on anilist.co
 2. From cookies, grab "laravel_session"

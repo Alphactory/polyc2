@@ -1,3 +1,5 @@
+Data Exfiltration over linkedin chat
+LIMITATIONS: None known
 To use the linkedin chat module:
 1. Make a new linkedin account and log in.
 2. Add another linkedin account you control as a connection and start a chat.

