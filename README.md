@@ -8,7 +8,7 @@ Combleaf is a modular data exfiltration framework and repository of data exfiltr
 ```
 #read the module readme to find out what data you need for a module
 data_dict = {
-  csrf_token:"whatevertoken
+  csrf_token:"whatevertoken"
 }
 mycomb = combleaf.Combleaf("modules.<pick a module>", data_dict)
 mycomb.send("whatever data you want")
