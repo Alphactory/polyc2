@@ -7,6 +7,6 @@ Combleaf is a modular data exfiltration framework and repository of data exfiltr
 # How do I get started
 ```
 mycomb = combleaf.Combleaf("modules.<pick a module>")
-comb.send("whatever data you want")
-mydata = comb.recv()
+mycomb.send("whatever data you want")
+mydata = mycomb.recv()
 ```
