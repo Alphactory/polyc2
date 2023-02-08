@@ -6,6 +6,7 @@ Combleaf is a modular data exfiltration framework and repository of data exfiltr
 
 # How do I get started
 ```
+import combleaf
 #read the module readme to find out what data you need for a module
 data_dict = {
   csrf_token:"whatevertoken"
