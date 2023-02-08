@@ -1,10 +1,10 @@
-# combleaf
-combleaf is a modular data exfiltration framework and repository of data exfiltration methods
+# Combleaf
+Combleaf is a modular data exfiltration framework and repository of data exfiltration methods
 
-# install
+# Install
 ```git clone https://github.com/secureighty/combleaf```
 
-# how do I get started
+# How do I get started
 ```
 mycomb = combleaf.Combleaf("modules.<pick a module>")
 comb.send("whatever data you want")
