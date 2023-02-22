@@ -12,6 +12,6 @@ data_dict = {
   csrf_token:"whatevertoken"
 }
 mycomb = combleaf.Combleaf("modules.<pick a module>", data_dict)
-mycomb.send("whatever data you want")
+mycomb.send(b"whatever data you want")
 mydata = mycomb.recv()
 ```
